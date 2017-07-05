@@ -1,0 +1,1 @@
+# UITricks.StaticWebsiteBoilerplate
