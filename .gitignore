@@ -1,0 +1,11 @@
+# Project files
+/build/
+/node_modules/
+
+# Editor configuration and project files
+.idea/
+.vscode/
+
+# System generated files
+.DS_Store
+Thumbs.db

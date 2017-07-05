@@ -1,0 +1,14 @@
+# EditorConfig (http://editorconfig.org) helps developers define and maintain
+# consistent coding styles between different editors and IDEs.
+#
+# To benefit from EditorConfig settings you may need to install a plugin:
+# http://editorconfig.org/#download
+
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true

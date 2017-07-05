@@ -1,0 +1,5 @@
+{% macro svg(filename, optionalClasses="") %}
+  <span class="icon icon-{{ filename }} {{ optionalClasses }}">
+    {% include filename + ".svg" %}
+  </span>
+{% endmacro %}

@@ -1,0 +1,24 @@
+/**
+ * Import variables
+ */
+@import 'variables';
+
+
+/**
+ * Import dependencies
+ */
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+/**
+ * Project files
+ */
+@import 'variables';
+@import 'scaffolding';
+
+
+/**
+ * Vendor components
+ *
+ * Custom styles for 3rd party components.
+ */

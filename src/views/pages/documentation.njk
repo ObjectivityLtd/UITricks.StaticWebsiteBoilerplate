@@ -1,0 +1,134 @@
+{% extends "components/layout.njk" %}
+
+{% block content %}
+  <div class="container">
+    <div class="page-header">
+      <h1>Documentation</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <aside>
+          <nav>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a href="#about-project">About project</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#starting-work">Starting work</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#gulp-tasks">Gulp tasks</a>
+              </li>
+              <li class="list-group-item">
+                <a href="#javascript-example">JavaScript example</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+      <div class="col-md-9">
+        <section>
+          <article>
+            <h2 id="about-project">About project</h2>
+            <p>
+              Static Website Boilerplate is a small project start package. It aims to simplify
+              set-up and development by delivering complete project structure and automation
+              for common tasks.
+            </p>
+
+            <p>Static Website Boilerplate includes:</p>
+            <ul>
+              <li>
+                <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> – a rich and powerful
+                templating language developed by Mozilla.
+              </li>
+              <li>
+                <a href="http://gulpjs.com">gulp</a> – tasks runner for automation process.
+              </li>
+              <li>
+                <a href="https://www.npmjs.com/package/gulp-connect">gulp-connect</a> – lightweight
+                web server with support for live reload (sponsored by JetBrains).
+              </li>
+              <li>
+                <a href="http://sass-lang.com">Sass</a> – the most popular CSS preprocessor.
+              </li>
+              <li>
+                <a href="https://github.com/twbs/bootstrap-sass">Bootstrap Sass</a> – Bootstrap
+                UI framework in Sass version to benefit from variables and mixins.
+              </li>
+              <li>
+                <a href="https://jquery.com">jQuery</a> – JavaScript library for easy DOM
+                manipulation.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <article>
+            <h2>Starting work</h2>
+            <ol>
+              <li>Start by cloning Static Website Boilerplate repository.</li>
+              <li>Install globally <code>gulp-cli</code> package: <code>npm install --global gulp-cli</code>.</li>
+              <li>Go to project root directory and install dependencies: <code>npm install</code>.</li>
+              <li>Run the project: <code>gulp serve</code>.</li>
+            </ol>
+          </article>
+        </section>
+
+        <section>
+          <article>
+            <h2 id="gulp-tasks">Gulp tasks</h2>
+            <p>
+              You can always run <code>gulp --tasks</code> command from CLI to get the full tasks
+              list. Tu run the task, type <code>gulp</code> followed by task name e.g.
+              <code>gulp build</code> or <code>gulp watch:styles</code>. Default gulp tasks is
+              <code>serve</code>.
+            </p>
+
+            <ul>
+              <li>
+                <code>build</code> – Build application for development.
+
+                <ul>
+                  <li><code>build:app</code> – Build application scripts.</li>
+                  <li><code>build:assets</code> – Copy static assets like icons or images.</li>
+                  <li><code>build:styles</code> – Compile Sass files to CSS.</li>
+                  <li><code>build:views</code> – Compile templates to plain HTML.</li>
+                </ul>
+              </li>
+              <li>
+                <code>watch</code> – Rebuild application components on file changes.
+
+                <ul>
+                  <li><code>watch:app</code> – Rebuild application scripts.</li>
+                  <li><code>watch:assets</code> – Watch static assets changes.</li>
+                  <li><code>watch:styles</code> – Recompile Sass files on changes.</li>
+                  <li><code>watch:views</code> – Recompile templates on changes.</li>
+                </ul>
+              </li>
+              <li>
+                <code>serve</code> – Run application server for development.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <article>
+            <h2 id="javascript-examples">JavaScript example</h2>
+            <p>
+              Simple JavaScript example to demonstrate that scripts from <code>app/</code>
+              directory are working.
+            </p>
+
+            <p>Counter: <strong class="js-counter-value">0</strong></p>
+            <button class="btn btn-primary js-counter-increment">+</button>
+            <button class="btn btn-primary js-counter-decrement">-</button>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}
