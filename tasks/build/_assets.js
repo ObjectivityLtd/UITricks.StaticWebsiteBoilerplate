@@ -3,7 +3,7 @@ const gulp = require('gulp');
 const plugins = require('gulp-load-plugins')();
 
 function buildAssets() {
-  const assets = gulp.src('src/assets/*', { base: 'src/assets' })
+  const assets = gulp.src('src/assets/**/*', { base: 'src/assets' })
     .pipe(gulp.dest('build/assets'))
     .pipe(plugins.connect.reload());
 
