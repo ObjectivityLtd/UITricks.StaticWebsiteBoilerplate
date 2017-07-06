@@ -14,13 +14,16 @@ Static Website Boilerplate includes:
 
 
 ## How to run the project
-1. Start with installing gulp-cli and project dependencies:
-`npm install --global gulp-cli && npm install`
+1. Start with installing gulp-cli (you can skip this if you already have it):  
+`npm install --global gulp-cli`
 
-2. Build website and run development server using task:
+2. Install project dependencies:  
+`npm install`
+
+3. Build website and run development server using task:  
 `gulp serve`
 
-3. Open website in a browser by navigating to: http://localhost:8080
+4. Open website in a browser by navigating to: http://localhost:8080
 (default port can be changed in `tasks/config.js`).
 
 
