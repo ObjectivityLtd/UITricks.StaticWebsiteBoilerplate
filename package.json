@@ -1,6 +1,6 @@
 {
   "name": "static-website-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Static website project skeleton, including template engine (nunjucks), Sass and Gulp.",
   "main": "gulpfile.js",
   "scripts": {

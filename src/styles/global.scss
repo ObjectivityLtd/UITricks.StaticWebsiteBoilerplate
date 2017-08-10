@@ -1,5 +1,5 @@
 /**
- * Import variables
+ * Import configuration, variables and mixins
  */
 @import 'variables';
 
@@ -13,8 +13,7 @@
 /**
  * Project files
  */
-@import 'variables';
-@import 'scaffolding';
+@import 'core';
 
 
 /**
