@@ -1,10 +1,10 @@
 {
   "name": "static-website-boilerplate",
   "version": "0.1.1",
-  "description": "Static website project skeleton, including template engine (nunjucks), Sass and Gulp.",
+  "description": "",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:styles": "stylelint src/styles/**/*.scss"
   },
   "author": "Jarosław Pustuła <jpustula@objectivity.co.uk>",
   "license": "MIT",
@@ -20,11 +20,13 @@
     "gulp-babel": "^8.0.0-beta.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.2.0",
+    "gulp-htmlmin": "^4.0.0",
     "gulp-load-plugins": "^1.5.0",
     "gulp-merge": "^0.1.1",
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "require-dir": "^1.0.0"
+    "require-dir": "^1.0.0",
+    "stylelint": "^8.4.0"
   }
 }
