@@ -2,7 +2,7 @@
   "name": "static-website-boilerplate",
   "version": "0.1.1",
   "description": "Static website project skeleton, including template engine (nunjucks), Sass and Gulp.",
-  "main": "gulpfile.js",
+  "main": "gulpfile.babel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,9 +13,9 @@
     "jquery": "^3.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
-    "@babel/register": "^7.0.0-beta.39",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/register": "^7.0.0-beta.40",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0-beta.1",
     "gulp-concat": "^2.6.1",
@@ -25,6 +25,6 @@
     "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "require-dir": "^0.3.2"
+    "require-dir": "^1.0.0"
   }
 }
