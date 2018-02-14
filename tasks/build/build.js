@@ -1,15 +1,21 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import buildApp from './_app';
+import buildAssets from './_assets';
+import buildStyles from './_styles';
+import buildViews from './_views';
 
-function build() {
-  // empty
-}
-build.description = 'Build application for development.';
+/**
+ * Task: build
+ */
+const build = gulp.parallel(
+  buildApp,
+  buildAssets,
+  buildStyles,
+  buildViews
+);
+build.displayName = 'build';
+build.description = 'Build application scripts, copy assets, compile Sass and views.';
 
-const tasksToRun = [
-  'build:app',
-  'build:assets',
-  'build:styles',
-  'build:views'
-];
+gulp.task(build);
 
-gulp.task('build', tasksToRun, build);
+export default build;

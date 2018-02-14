@@ -1,0 +1,23 @@
+{
+  "serve": {
+    "port": 8080,
+    "livereload": true
+  },
+
+  "assets": [
+    { "src": "src/assets/**/*", "base": "src" },
+    "src/favicon.ico",
+    "src/robots.txt",
+    "src/web.config"
+  ],
+
+  "scripts": {
+    "vendor": [
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/bootstrap-sass/assets/javascripts/bootstrap.js"
+    ],
+    "local": [
+      "src/app/**/*.js"
+    ]
+  }
+}

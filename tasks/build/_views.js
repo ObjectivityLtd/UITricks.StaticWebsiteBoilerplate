@@ -1,18 +1,23 @@
-const config = require('../config.js');
-const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
+import gulp from 'gulp';
+import nunjucks from 'gulp-nunjucks-render';
+import * as config from '../config';
 
+/**
+ * Task: build:views
+ */
 function buildViews() {
   return gulp.src('src/views/pages/**/*.njk')
-    .pipe(plugins.nunjucksRender({
+    .pipe(nunjucks({
       path: [
-        'src/views',
-        'src/assets/icons'
+        'src/assets/icons',
+        'src/views'
       ]
     }))
-    .pipe(gulp.dest('build'))
-    .pipe(plugins.connect.reload());
+    .pipe(gulp.dest('build'));
 }
-buildViews.description = 'Compile templates to plain HTML.';
+buildViews.displayName = 'build:views';
+buildViews.description = 'Compile nunjucks templates to HTML.';
 
-gulp.task('build:views', buildViews);
+gulp.task(buildViews);
+
+export default buildViews;

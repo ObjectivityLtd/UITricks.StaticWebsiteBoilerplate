@@ -1,18 +1,27 @@
-const config = require('../config.js');
-const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
+import gulp from 'gulp';
+import * as config from '../config';
 
-function buildAssets() {
-  const assets = gulp.src('src/assets/**/*', { base: 'src/assets' })
-    .pipe(gulp.dest('build/assets'))
-    .pipe(plugins.connect.reload());
+function copyAssets() {
+  return config.assets.map(asset => {
+    if (asset instanceof Object) {
+      return gulp.src(asset.src, { base: asset.base })
+        .pipe(gulp.dest(asset.dest || 'build'));
+    }
 
-  const files = gulp.src(['src/favicon.ico', 'src/robots.txt' ])
-    .pipe(gulp.dest('build'))
-    .pipe(plugins.connect.reload());
-
-  return plugins.merge(assets, files);
+    return gulp.src(asset)
+      .pipe(gulp.dest('build'));
+  });
 }
-buildAssets.description = 'Copy static assets like icons or images.';
 
-gulp.task('build:assets', buildAssets);
+/**
+ * Task: build:assets
+ */
+const buildAssets = gulp.parallel(
+  copyAssets
+);
+buildAssets.displayName = 'build:assets';
+buildAssets.description = 'Copy static assets like fonts, images, icons, favicon etc.';
+
+gulp.task(buildAssets);
+
+export default buildAssets;
