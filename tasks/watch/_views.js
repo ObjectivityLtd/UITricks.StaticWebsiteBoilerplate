@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import buildViews from '../build/_views';
+import * as config from '../config';
 
 /**
  * Task: watch:views

@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import buildStyles from '../build/_styles';
+import * as config from '../config';
 
 /**
  * Task: watch:styles

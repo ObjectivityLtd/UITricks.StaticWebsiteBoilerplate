@@ -6,7 +6,7 @@ import * as config from '../config';
 
 function readEnvironmentData() {
   const filePath = path.join(__dirname, '../../src/environments/env.json');
-  const data = JSON.parse(fs.readFileSync(environmentFilePath, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
   return data;
 }

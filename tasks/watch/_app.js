@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import buildApp from '../build/_app';
+import * as config from '../config';
 
 /**
  * Task: watch:app
