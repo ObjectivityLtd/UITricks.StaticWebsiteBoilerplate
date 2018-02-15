@@ -14,7 +14,7 @@ const build = gulp.parallel(
   buildViews
 );
 build.displayName = 'build';
-build.description = 'Build application scripts, copy assets, compile Sass and views.';
+build.description = 'Build application scripts, copy assets, compile styles and views.';
 
 gulp.task(build);
 

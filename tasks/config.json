@@ -1,5 +1,6 @@
 {
   "serve": {
+    "host": "localhost",
     "port": 8080,
     "livereload": true
   },
