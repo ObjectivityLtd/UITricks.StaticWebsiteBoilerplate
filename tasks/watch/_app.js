@@ -1,8 +1,15 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import buildApp from '../build/_app';
 
+/**
+ * Task: watch:app
+ */
 function watchApp() {
-  gulp.watch('src/app/**/*.js', ['build:app']);
+  gulp.watch('src/app/**/*.js', gulp.parallel(buildApp));
 }
-watchApp.description = 'Rebuild application scripts.';
+watchApp.displayName = 'watch:app';
+watchApp.description = 'Rebuild application scripts on changes.';
 
-gulp.task('watch:app', ['build:app'], watchApp);
+gulp.task(watchApp);
+
+export default watchApp;

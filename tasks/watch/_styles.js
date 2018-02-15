@@ -1,8 +1,15 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import buildStyles from '../build/_styles';
 
+/**
+ * Task: watch:styles
+ */
 function watchStyles() {
-  gulp.watch('src/styles/**/*.scss', ['build:styles']);
+  gulp.watch('src/styles/**/*.scss', gulp.parallel(buildStyles));
 }
+watchStyles.displayName = 'watch:styles';
 watchStyles.description = 'Recompile Sass files on changes.';
 
-gulp.task('watch:styles', ['build:styles'], watchStyles);
+gulp.task(watchStyles);
+
+export default watchStyles;

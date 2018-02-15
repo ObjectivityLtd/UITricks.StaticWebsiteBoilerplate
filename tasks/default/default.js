@@ -1,4 +1,4 @@
 import gulp from 'gulp';
-import build from '../build/build';
+import serve from '../serve/serve';
 
-gulp.task('default', build);
+gulp.task('default', serve);

@@ -35,7 +35,7 @@ const buildApp = gulp.series(
   mergeAllScripts
 );
 buildApp.displayName = 'build:app';
-buildApp.description = 'Build all application scripts.';
+buildApp.description = 'Build application scripts.';
 
 gulp.task(buildApp);
 

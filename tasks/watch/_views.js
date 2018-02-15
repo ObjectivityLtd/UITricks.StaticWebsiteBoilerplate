@@ -1,8 +1,15 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import buildViews from '../build/_views';
 
+/**
+ * Task: watch:views
+ */
 function watchViews() {
-  gulp.watch('src/views/**/*.njk', ['build:views']);
+  gulp.watch(['src/views/**/*.njk', 'src/environments/env.json'], gulp.parallel(buildViews));
 }
-watchViews.description = 'Recompile templates on changes.';
+watchViews.displayName = 'watch:views';
+watchViews.description = 'Recompile nunjucks templates on changes.';
 
-gulp.task('watch:views', ['build:views'], watchViews);
+gulp.task(watchViews);
+
+export default watchViews;

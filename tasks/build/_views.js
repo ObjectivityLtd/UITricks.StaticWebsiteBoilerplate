@@ -5,10 +5,10 @@ import path from 'path';
 import * as config from '../config';
 
 function readEnvironmentData() {
-  const environmentFilePath = path.join(__dirname, '../../src/environments/env.json');
-  const environmentData = JSON.parse(fs.readFileSync(environmentFilePath, 'utf8'));
+  const filePath = path.join(__dirname, '../../src/environments/env.json');
+  const data = JSON.parse(fs.readFileSync(environmentFilePath, 'utf8'));
 
-  return environmentData;
+  return data;
 }
 
 /**

@@ -1,15 +1,21 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import watchApp from './_app';
+import watchAssets from './_assets';
+import watchStyles from './_styles';
+import watchViews from './_views';
 
-function watch() {
-  // empty
-}
-watch.description = 'Rebuild application components on file changes.';
+/**
+ * Task: watch
+ */
+const watch = gulp.parallel(
+  watchApp,
+  watchAssets,
+  watchStyles,
+  watchViews
+);
+watch.displayName = 'watch';
+watch.description = 'Rebuild application components on changes.';
 
-const tasksToRun = [
-  'watch:app',
-  'watch:assets',
-  'watch:styles',
-  'watch:views'
-];
+gulp.task(watch);
 
-gulp.task('watch', tasksToRun, watch);
+export default watch;

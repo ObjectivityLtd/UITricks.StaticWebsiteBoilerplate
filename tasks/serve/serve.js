@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import connect from 'gulp-connect';
 import minimist from 'minimist';
+import watch from '../watch/watch'
 import * as config from '../config';
 
 function getFlags() {
@@ -18,10 +19,7 @@ function getFlags() {
   return minimist(process.argv.slice(2), knownFlags);
 }
 
-/**
- * Task: serve
- */
-function serve() {
+function runServer() {
   const flags = getFlags();
 
   connect.server({
@@ -31,6 +29,15 @@ function serve() {
     livereload: flags.livereload
   });
 }
+
+/**
+ * Task: serve
+ */
+const serve = gulp.parallel(
+  runServer,
+  watch
+);
+serve.displayName = 'serve';
 serve.description = 'Run application server for development.';
 serve.flags = {
   '--host': `Hostname used to run the server (default: ${config.serve.host})`,

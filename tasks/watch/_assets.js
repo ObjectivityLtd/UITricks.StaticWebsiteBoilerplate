@@ -1,8 +1,15 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import buildAssets from '../build/_assets';
 
+/**
+ * Task: watch:assets
+ */
 function watchAssets() {
-  gulp.watch('src/assets', ['build:assets']);
-}
-watchAssets.description = 'Watch static assets changes.';
 
-gulp.task('watch:assets', ['build:assets'], watchAssets);
+}
+watchAssets.displayName = 'watch:assets';
+watchAssets.description = '';
+
+gulp.task(watchAssets);
+
+export default watchAssets;
