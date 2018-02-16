@@ -5,7 +5,7 @@ import watch from '../watch/watch'
 import * as config from '../config';
 
 function getFlags() {
-  const knownFlags = {
+  const flags = {
     string: 'host',
     number: 'port',
     boolean: 'livereload',
@@ -16,7 +16,7 @@ function getFlags() {
     }
   };
 
-  return minimist(process.argv.slice(2), knownFlags);
+  return minimist(process.argv.slice(2), flags);
 }
 
 function runServer() {

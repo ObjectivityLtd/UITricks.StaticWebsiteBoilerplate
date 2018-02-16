@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import buildStyles from '../build/_styles';
 import * as config from '../config';
 
-function rebuildOnChanges() {
+function rebuildOnChange() {
   gulp.watch('src/styles/**/*.scss', gulp.parallel(buildStyles));
 }
 
@@ -11,10 +11,10 @@ function rebuildOnChanges() {
  */
 const watchStyles = gulp.series(
   buildStyles,
-  rebuildOnChanges
+  rebuildOnChange
 );
 watchStyles.displayName = 'watch:styles';
-watchStyles.description = 'Recompile Sass files on changes.';
+watchStyles.description = 'Recompile Sass files on change.';
 
 gulp.task(watchStyles);
 

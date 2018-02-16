@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import buildApp from '../build/_app';
 import * as config from '../config';
 
-function rebuildOnChanges() {
+function rebuildOnChange() {
   gulp.watch('src/app/**/*.js', gulp.parallel(buildApp));
 }
 
@@ -11,10 +11,10 @@ function rebuildOnChanges() {
  */
 const watchApp = gulp.series(
   buildApp,
-  rebuildOnChanges
+  rebuildOnChange
 );
 watchApp.displayName = 'watch:app';
-watchApp.description = 'Rebuild application scripts on changes.';
+watchApp.description = 'Rebuild application scripts on change.';
 
 gulp.task(watchApp);
 

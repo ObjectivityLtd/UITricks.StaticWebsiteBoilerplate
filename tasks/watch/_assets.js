@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import buildAssets from '../build/_assets';
 import * as config from '../config';
 
-function rebuildOnChanges() {
+function rebuildOnChange() {
 
 }
 
@@ -11,7 +11,7 @@ function rebuildOnChanges() {
  */
 const watchAssets = gulp.series(
   buildAssets,
-  rebuildOnChanges
+  rebuildOnChange
 );
 watchAssets.displayName = 'watch:assets';
 watchAssets.description = '';

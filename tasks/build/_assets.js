@@ -14,7 +14,7 @@ function copyToBuild() {
     .pipe(gulp.dest('build'));
 }
 
-const copyToCustomBuildPaths = function () {
+function createCustomCopyTasks() {
   const filesToCopy = config.assets.filter(asset => {
     return isCustomCopyPath(asset);
   });
@@ -27,14 +27,14 @@ const copyToCustomBuildPaths = function () {
       done();
     };
   });
-}();
+}
 
 /**
  * Task: build:assets
  */
 const buildAssets = gulp.parallel(
   copyToBuild,
-  copyToCustomBuildPaths
+  createCustomCopyTasks()
 );
 buildAssets.displayName = 'build:assets';
 buildAssets.description = 'Copy static assets like fonts, images, icons, favicon etc.';
