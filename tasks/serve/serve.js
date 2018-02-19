@@ -1,5 +1,5 @@
+import browserSync from 'browser-sync';
 import gulp from 'gulp';
-import connect from 'gulp-connect';
 import minimist from 'minimist';
 import watch from '../watch/watch'
 import * as config from '../config';
@@ -19,15 +19,21 @@ function getFlags() {
   return minimist(process.argv.slice(2), flags);
 }
 
-function runServer() {
+function runServer(done) {
   const flags = getFlags();
+  const server = browserSync.create();
 
-  connect.server({
-    root: 'build',
+  server.init({
+    server: {
+      baseDir: 'build'
+    },
     host: flags.host,
     port: flags.port,
-    livereload: flags.livereload
+    codeSync: flags.livereload,
+    notify: false
   });
+
+  done();
 }
 
 /**
