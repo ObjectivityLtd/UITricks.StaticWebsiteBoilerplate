@@ -14,7 +14,7 @@ function getEnvironmentData() {
 /**
  * Task: build:views
  */
-function buildViews() {
+export function buildViews() {
   const compileOptions = {
     data: getEnvironmentData(),
     path: [
@@ -31,5 +31,3 @@ buildViews.displayName = 'build:views';
 buildViews.description = 'Compile nunjucks templates to HTML.';
 
 gulp.task(buildViews);
-
-export default buildViews;

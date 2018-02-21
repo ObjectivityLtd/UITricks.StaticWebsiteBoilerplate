@@ -5,7 +5,7 @@ import * as config from '@tasks/config';
 /**
  * Task: build:styles
  */
-function buildStyles() {
+export function buildStyles() {
   return gulp.src(`${config.paths.src}/styles/**/*.scss`)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(`${config.paths.dist}/styles`));
@@ -14,5 +14,3 @@ buildStyles.displayName = 'build:styles';
 buildStyles.description = 'Compile Sass files to CSS.';
 
 gulp.task(buildStyles);
-
-export default buildStyles;

@@ -32,7 +32,7 @@ const copyToCustomPaths = generateCustomCopyTasks();
 /**
  * Task: build:assets
  */
-const buildAssets = gulp.parallel(
+export const buildAssets = gulp.parallel(
   copyToBuild,
   copyToCustomPaths
 );
@@ -40,5 +40,3 @@ buildAssets.displayName = 'build:assets';
 buildAssets.description = 'Copy static assets like fonts, images, icons, favicon etc.';
 
 gulp.task(buildAssets);
-
-export default buildAssets;

@@ -32,7 +32,7 @@ const buildAllScripts = gulp.parallel(buildVendorScripts, buildLocalScripts);
 /**
  * Task: build:app
  */
-const buildApp = gulp.series(
+export const buildApp = gulp.series(
   buildAllScripts,
   mergeAllScripts
 );
@@ -40,5 +40,3 @@ buildApp.displayName = 'build:app';
 buildApp.description = 'Build application scripts.';
 
 gulp.task(buildApp);
-
-export default buildApp;

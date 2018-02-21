@@ -1,7 +1,8 @@
 import gulp from 'gulp';
-import { argv, flags, server } from '@root/gulpfile.babel';
 import * as config from '@tasks/config';
-import watch from '@tasks/watch/watch'
+import { argv, flags } from '@tasks/flags';
+import { server } from '@tasks/server';
+import { watch } from '@tasks/watch/watch';
 
 function runServer(done) {
   server.init({
@@ -20,7 +21,7 @@ function runServer(done) {
 /**
  * Task: serve
  */
-const serve = gulp.parallel(
+export const serve = gulp.parallel(
   runServer,
   watch
 );
@@ -35,5 +36,3 @@ serve.flags = {
 };
 
 gulp.task(serve);
-
-export default serve;

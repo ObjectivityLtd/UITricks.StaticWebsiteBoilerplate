@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import * as config from '@tasks/config';
-import buildViews from '@tasks/build/_views';
-import reloadServer from '@tasks/serve/_reload';
+import { buildViews } from '@tasks/build/_views';
+import { reloadServer } from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
   const filesToWatch = [
@@ -15,7 +15,7 @@ function rebuildOnChange() {
 /**
  * Task: watch:views
  */
-const watchViews = gulp.series(
+export const watchViews = gulp.series(
   buildViews,
   rebuildOnChange
 );
@@ -23,5 +23,3 @@ watchViews.displayName = 'watch:views';
 watchViews.description = 'Recompile nunjucks templates on change.';
 
 gulp.task(watchViews);
-
-export default watchViews;
