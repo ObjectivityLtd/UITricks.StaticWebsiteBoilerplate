@@ -1,37 +1,46 @@
 import browserSync from 'browser-sync';
-import minimist from 'minimist';
 import requireDir from 'require-dir';
+import yargs from 'yargs';
 import * as config from './tasks/config';
 
 const tasksPath = 'tasks';
 const tasksRequireOptions = { recurse: true };
 
-const registeredFlags = {
-  string: 'host',
-  number: 'port',
-  boolean: [
-    'open',
-    'sync',
-    'livereload'
-  ],
-
-  alias: {
-    h: 'host',
-    p: 'port',
-    o: 'open',
-    s: 'sync',
-    lr: 'livereload'
+export const flags = {
+  host: {
+    alias: 'h',
+    description: `Hostname used to run the server.`,
+    type: 'string',
+    requiresArg: true,
+    default: config.server.host
   },
-
-  default: {
-    host: config.server.host,
-    port: config.server.port,
-    open: config.server.openBrowser,
-    sync: config.server.syncBrowserActivities,
-    livereload: config.server.livereload
+  port: {
+    alias: 'p',
+    description: `Port used to run the server.`,
+    type: 'number',
+    requiresArg: true,
+    default: config.server.port
+  },
+  open: {
+    alias: 'o',
+    description: `Open application in default browser.`,
+    type: 'boolean',
+    default: config.server.openBrowser
+  },
+  sync: {
+    alias: ['s', 'sync-browser'],
+    description: `Sync activities like clicks, scroll and form inputs across browsers.`,
+    type: 'boolean',
+    default: config.server.syncBrowserActivities
+  },
+  livereload: {
+    alias: ['lr', 'live-reload'],
+    description: `Live reload on file changes.`,
+    type: 'boolean',
+    default: config.server.livereload
   }
 };
 
 export const tasks = requireDir(tasksPath, tasksRequireOptions);
-export const flags = minimist(process.argv.slice(2), registeredFlags);
+export const argv = yargs.options(flags).argv;
 export const server = browserSync.create();

@@ -1,17 +1,17 @@
 import gulp from 'gulp';
 import watch from '../watch/watch'
-import { flags, server } from '../../gulpfile.babel';
+import { argv, flags, server } from '../../gulpfile.babel';
 import * as config from '../config';
 
 function runServer(done) {
   server.init({
     server: 'build',
-    host: flags.host,
-    port: flags.port,
-    open: flags.open,
-    ghostMode: flags.sync,
-    codeSync: flags.livereload,
-    notify: false,
+    host: argv.host,
+    port: argv.port,
+    open: argv.open,
+    ghostMode: argv.sync,
+    codeSync: argv.livereload,
+    notify: false
   });
 
   done();
@@ -27,11 +27,11 @@ const serve = gulp.parallel(
 serve.displayName = 'serve';
 serve.description = 'Run application server for development.';
 serve.flags = {
-  '--host': `Hostname used to run the server (default: ${config.server.host})`,
-  '--port': `Port used to run the server (default: ${config.server.port})`,
-  '--open': `Open application in default browser (default: ${config.server.openBrowser})`,
-  '--sync': `Sync activities like clicks, scroll and form inputs across browsers (default: ${config.server.syncBrowserActivities})`,
-  '--livereload': `Live reload on file changes (default: ${config.server.livereload})`
+  '--host': flags.host.description,
+  '--port': flags.port.description,
+  '--open': flags.open.description,
+  '--sync-browser': flags.sync.description,
+  '--live-reload': flags.livereload.description
 };
 
 gulp.task(serve);
