@@ -1,7 +1,7 @@
 import gulp from 'gulp';
-import watch from '../watch/watch'
-import { argv, flags, server } from '../../gulpfile.babel';
-import * as config from '../config';
+import { argv, flags, server } from '@root/gulpfile.babel';
+import * as config from '@tasks/config';
+import watch from '@tasks/watch/watch'
 
 function runServer(done) {
   server.init({

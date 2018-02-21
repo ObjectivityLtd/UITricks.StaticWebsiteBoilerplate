@@ -2,7 +2,7 @@ import fs from 'fs';
 import gulp from 'gulp';
 import nunjucks from 'gulp-nunjucks-render';
 import path from 'path';
-import * as config from '../config';
+import * as config from '@tasks/config';
 
 function getEnvironmentData() {
   const filePath = path.join(__dirname, '../../src/environments/env.json');

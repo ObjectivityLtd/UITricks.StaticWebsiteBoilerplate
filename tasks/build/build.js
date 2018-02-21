@@ -1,8 +1,8 @@
 import gulp from 'gulp';
-import buildApp from './_app';
-import buildAssets from './_assets';
-import buildStyles from './_styles';
-import buildViews from './_views';
+import buildApp from '@tasks/build/_app';
+import buildAssets from '@tasks/build/_assets';
+import buildStyles from '@tasks/build/_styles';
+import buildViews from '@tasks/build/_views';
 
 /**
  * Task: build

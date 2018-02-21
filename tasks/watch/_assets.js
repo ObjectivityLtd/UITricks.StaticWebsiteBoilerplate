@@ -1,6 +1,6 @@
 import gulp from 'gulp';
-import buildAssets from '../build/_assets';
-import * as config from '../config';
+import * as config from '@tasks/config';
+import buildAssets from '@tasks/build/_assets';
 
 function rebuildOnChange() {
 

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
-import buildStyles from '../build/_styles';
-import reloadServer from '../serve/_reload';
-import * as config from '../config';
+import * as config from '@tasks/config';
+import buildStyles from '@tasks/build/_styles';
+import reloadServer from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
   gulp.watch('src/styles/**/*.scss', gulp.series(buildStyles, reloadServer));

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
-import * as config from '../config';
+import * as config from '@tasks/config';
 
 function buildVendorScripts() {
   return gulp.src(config.scripts.vendor)

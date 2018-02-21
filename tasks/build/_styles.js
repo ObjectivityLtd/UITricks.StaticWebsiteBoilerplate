@@ -1,6 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import * as config from '../config';
+import * as config from '@tasks/config';
 
 /**
  * Task: build:styles

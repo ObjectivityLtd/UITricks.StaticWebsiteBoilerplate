@@ -1,8 +1,8 @@
 import gulp from 'gulp';
-import watchApp from './_app';
-import watchAssets from './_assets';
-import watchStyles from './_styles';
-import watchViews from './_views';
+import watchApp from '@tasks/watch/_app';
+import watchAssets from '@tasks/watch/_assets';
+import watchStyles from '@tasks/watch/_styles';
+import watchViews from '@tasks/watch/_views';
 
 /**
  * Task: watch

@@ -1,7 +1,7 @@
 import gulp from 'gulp';
-import buildApp from '../build/_app';
-import reloadServer from '../serve/_reload';
-import * as config from '../config';
+import * as config from '@tasks/config';
+import buildApp from '@tasks/build/_app';
+import reloadServer from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
   gulp.watch('src/app/**/*.js', gulp.series(buildApp, reloadServer));

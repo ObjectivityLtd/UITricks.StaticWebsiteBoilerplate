@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { server } from '../../gulpfile.babel';
+import { server } from '@root/gulpfile.babel';
 
 /**
  * Task: serve:reload
