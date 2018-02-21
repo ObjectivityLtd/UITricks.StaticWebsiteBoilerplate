@@ -7,6 +7,11 @@
     "livereload": true
   },
 
+  "paths": {
+    "dist": "dist",
+    "src": "src"
+  },
+
   "assets": [
     { "src": "src/assets/**/*", "base": "src" },
     "src/favicon.ico",

@@ -4,7 +4,7 @@ import buildStyles from '@tasks/build/_styles';
 import reloadServer from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
-  gulp.watch('src/styles/**/*.scss', gulp.series(buildStyles, reloadServer));
+  gulp.watch(`${config.paths.src}/styles/**/*.scss`, gulp.series(buildStyles, reloadServer));
 }
 
 /**

@@ -11,7 +11,7 @@ function copyToBuild() {
   });
 
   return gulp.src(filesToCopy)
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest(config.paths.dist));
 }
 
 function generateCustomCopyTasks() {
@@ -22,7 +22,7 @@ function generateCustomCopyTasks() {
   return filesToCopy.map(asset => {
     return function copyToCustomPath() {
       return gulp.src(asset.src, { base: asset.base })
-        .pipe(gulp.dest(asset.dest || 'build'));
+        .pipe(gulp.dest(asset.dest || config.paths.dist));
     };
   });
 }

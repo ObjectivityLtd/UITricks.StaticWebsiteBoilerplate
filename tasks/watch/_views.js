@@ -4,7 +4,12 @@ import buildViews from '@tasks/build/_views';
 import reloadServer from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
-  gulp.watch(['src/views/**/*.njk', 'src/environments/env.json'], gulp.series(buildViews, reloadServer));
+  const filesToWatch = [
+    `${config.paths.src}/environments/env.json`,
+    `${config.paths.src}/views/**/*.njk`
+  ];
+
+  gulp.watch(filesToWatch, gulp.series(buildViews, reloadServer));
 }
 
 /**

@@ -4,7 +4,7 @@ import buildApp from '@tasks/build/_app';
 import reloadServer from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
-  gulp.watch('src/app/**/*.js', gulp.series(buildApp, reloadServer));
+  gulp.watch(`${config.paths.src}/app/**/*.js`, gulp.series(buildApp, reloadServer));
 }
 
 /**

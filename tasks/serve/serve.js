@@ -5,7 +5,7 @@ import watch from '@tasks/watch/watch'
 
 function runServer(done) {
   server.init({
-    server: 'build',
+    server: config.paths.dist,
     host: argv.host,
     port: argv.port,
     open: argv.open,
