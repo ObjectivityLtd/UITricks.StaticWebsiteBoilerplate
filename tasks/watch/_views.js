@@ -1,9 +1,10 @@
 import gulp from 'gulp';
 import buildViews from '../build/_views';
+import reloadServer from '../serve/_reload';
 import * as config from '../config';
 
 function rebuildOnChange() {
-  gulp.watch(['src/views/**/*.njk', 'src/environments/env.json'], gulp.parallel(buildViews));
+  gulp.watch(['src/views/**/*.njk', 'src/environments/env.json'], gulp.series(buildViews, reloadServer));
 }
 
 /**

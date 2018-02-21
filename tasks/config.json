@@ -1,7 +1,9 @@
 {
-  "serve": {
+  "server": {
     "host": "localhost",
     "port": 8080,
+    "openBrowser": false,
+    "syncBrowserActivities": false,
     "livereload": true
   },
 

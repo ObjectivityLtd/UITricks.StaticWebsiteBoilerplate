@@ -4,7 +4,7 @@ import nunjucks from 'gulp-nunjucks-render';
 import path from 'path';
 import * as config from '../config';
 
-function readEnvironmentData() {
+function getEnvironmentData() {
   const filePath = path.join(__dirname, '../../src/environments/env.json');
   const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
@@ -16,7 +16,7 @@ function readEnvironmentData() {
  */
 function buildViews() {
   const compileOptions = {
-    data: readEnvironmentData(),
+    data: getEnvironmentData(),
     path: [
       'src/assets/icons',
       'src/views'

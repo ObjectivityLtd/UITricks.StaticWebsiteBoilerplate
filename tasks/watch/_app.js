@@ -1,9 +1,10 @@
 import gulp from 'gulp';
 import buildApp from '../build/_app';
+import reloadServer from '../serve/_reload';
 import * as config from '../config';
 
 function rebuildOnChange() {
-  gulp.watch('src/app/**/*.js', gulp.parallel(buildApp));
+  gulp.watch('src/app/**/*.js', gulp.series(buildApp, reloadServer));
 }
 
 /**

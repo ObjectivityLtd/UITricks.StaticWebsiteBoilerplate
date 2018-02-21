@@ -14,27 +14,27 @@ function copyToBuild() {
     .pipe(gulp.dest('build'));
 }
 
-function createCustomCopyTasks() {
+function generateCustomCopyTasks() {
   const filesToCopy = config.assets.filter(asset => {
     return isCustomCopyPath(asset);
   });
 
   return filesToCopy.map(asset => {
-    return function copyToCustomBuildPath(done) {
-      gulp.src(asset.src, { base: asset.base })
+    return function copyToCustomPath() {
+      return gulp.src(asset.src, { base: asset.base })
         .pipe(gulp.dest(asset.dest || 'build'));
-
-      done();
     };
   });
 }
+
+const copyToCustomPaths = generateCustomCopyTasks();
 
 /**
  * Task: build:assets
  */
 const buildAssets = gulp.parallel(
   copyToBuild,
-  createCustomCopyTasks()
+  copyToCustomPaths
 );
 buildAssets.displayName = 'build:assets';
 buildAssets.description = 'Copy static assets like fonts, images, icons, favicon etc.';

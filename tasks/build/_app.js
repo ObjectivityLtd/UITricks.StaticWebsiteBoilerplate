@@ -27,11 +27,13 @@ function mergeAllScripts() {
     .pipe(gulp.dest('build/app'));
 }
 
+const buildAllScripts = gulp.parallel(buildVendorScripts, buildLocalScripts);
+
 /**
  * Task: build:app
  */
 const buildApp = gulp.series(
-  gulp.parallel(buildVendorScripts, buildLocalScripts),
+  buildAllScripts,
   mergeAllScripts
 );
 buildApp.displayName = 'build:app';
