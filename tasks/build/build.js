@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import { flags } from '@tasks/flags';
 import { buildApp } from '@tasks/build/_app';
 import { buildAssets } from '@tasks/build/_assets';
 import { buildStyles } from '@tasks/build/_styles';
@@ -15,5 +16,8 @@ export const build = gulp.parallel(
 );
 build.displayName = 'build';
 build.description = 'Build application scripts, copy assets, compile styles and views.';
+build.flags = {
+  '--prod': flags['prod'].description
+};
 
 gulp.task(build);
