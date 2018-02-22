@@ -15,7 +15,7 @@ function getEnvironmentData() {
  * Task: build:views
  */
 export function buildViews() {
-  const compileOptions = {
+  const options = {
     data: getEnvironmentData(),
     path: [
       `${config.paths.src}/assets/icons`,
@@ -24,7 +24,7 @@ export function buildViews() {
   };
 
   return gulp.src(`${config.paths.src}/views/pages/**/*.njk`)
-    .pipe(nunjucks(compileOptions))
+    .pipe(nunjucks(options))
     .pipe(gulp.dest(config.paths.dist));
 }
 buildViews.displayName = 'build:views';

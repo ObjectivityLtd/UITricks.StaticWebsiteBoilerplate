@@ -3,8 +3,9 @@
   "plugins": [
     ["module-resolver", {
       "alias": {
-        "@root": ".",
+        "@src": "./src",
         "@app": "./src/app",
+        "@env": "./src/environments",
         "@tasks": "./tasks"
       }
     }]

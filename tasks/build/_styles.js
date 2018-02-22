@@ -6,7 +6,7 @@ import * as config from '@tasks/config';
  * Task: build:styles
  */
 export function buildStyles() {
-  return gulp.src(`${config.paths.src}/styles/**/*.scss`)
+  return gulp.src(`${config.paths.src}/styles/**/*.+(sass|scss)`)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(`${config.paths.dist}/styles`));
 }
