@@ -2,37 +2,42 @@ import yargs from 'yargs';
 import * as config from '@tasks/config';
 
 export const flags = {
-  host: {
+  'host': {
     alias: 'h',
-    description: `Hostname used to run the server.`,
+    description: 'Hostname used to run the server.',
     type: 'string',
     requiresArg: true,
     default: config.server.host
   },
-  port: {
+  'port': {
     alias: 'p',
-    description: `Port used to run the server.`,
+    description: 'Port used to run the server.',
     type: 'number',
     requiresArg: true,
     default: config.server.port
   },
-  open: {
+  'open': {
     alias: 'o',
-    description: `Open application in default browser.`,
+    description: 'Open application in default browser.',
     type: 'boolean',
     default: config.server.openBrowser
   },
-  sync: {
-    alias: ['s', 'sync-browser'],
-    description: `Sync activities like clicks, scroll and form inputs across browsers.`,
+  'sync-browsers': {
+    alias: 's',
+    description: 'Sync activities like clicks, scroll and form inputs across browsers.',
     type: 'boolean',
-    default: config.server.syncBrowserActivities
+    default: config.server.syncBrowsers
   },
-  livereload: {
-    alias: ['lr', 'live-reload'],
-    description: `Live reload on file changes.`,
+  'live-reload': {
+    alias: 'lr',
+    description: 'Live reload on file changes.',
     type: 'boolean',
-    default: config.server.livereload
+    default: config.server.liveReload
+  },
+  'prod': {
+    description: '',
+    type: 'boolean',
+    default: false
   }
 };
 

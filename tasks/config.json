@@ -3,8 +3,8 @@
     "host": "localhost",
     "port": 8080,
     "openBrowser": false,
-    "syncBrowserActivities": false,
-    "livereload": true
+    "syncBrowsers": false,
+    "liveReload": true
   },
 
   "paths": {

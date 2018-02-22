@@ -7,11 +7,11 @@ import { watch } from '@tasks/watch/watch';
 function runServer(done) {
   server.init({
     server: config.paths.dist,
-    host: argv.host,
-    port: argv.port,
-    open: argv.open,
-    ghostMode: argv.sync,
-    codeSync: argv.livereload,
+    host: argv['host'],
+    port: argv['port'],
+    open: argv['open'],
+    ghostMode: argv['sync-browsers'],
+    codeSync: argv['live-reload'],
     notify: false
   });
 
@@ -28,11 +28,11 @@ export const serve = gulp.parallel(
 serve.displayName = 'serve';
 serve.description = 'Run application server for development.';
 serve.flags = {
-  '--host': flags.host.description,
-  '--port': flags.port.description,
-  '--open': flags.open.description,
-  '--sync-browser': flags.sync.description,
-  '--live-reload': flags.livereload.description
+  '--host': flags['host'].description,
+  '--port': flags['port'].description,
+  '--open': flags['open'].description,
+  '--sync-browsers': flags['sync-browsers'].description,
+  '--live-reload': flags['live-reload'].description
 };
 
 gulp.task(serve);
