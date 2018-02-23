@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import * as config from '@tasks/config';
 
-function isCustomCopyPath(path) {
+export function isCustomCopyPath(path) {
   return path instanceof Object;
 }
 

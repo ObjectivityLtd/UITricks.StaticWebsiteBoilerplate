@@ -1,10 +1,14 @@
 import gulp from 'gulp';
 import * as config from '@tasks/config';
-import { buildAssets } from '@tasks/build/_assets';
+import { buildAssets, isCustomCopyPath } from '@tasks/build/_assets';
 import { reloadServer } from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
+  const pathsToWatch = config.assets.map(asset => {
+    return isCustomCopyPath(asset) ? asset.src : asset;
+  });
 
+  gulp.watch(pathsToWatch, gulp.series(buildAssets, reloadServer));
 }
 
 /**
