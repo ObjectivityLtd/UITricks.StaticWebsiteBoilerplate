@@ -19,6 +19,6 @@ export const watchAssets = gulp.series(
   rebuildOnChange
 );
 watchAssets.displayName = 'watch:assets';
-watchAssets.description = '';
+watchAssets.description = 'Update static assets on change.';
 
 gulp.task(watchAssets);

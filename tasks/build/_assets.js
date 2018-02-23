@@ -37,6 +37,6 @@ export const buildAssets = gulp.parallel(
   copyToCustomPaths
 );
 buildAssets.displayName = 'build:assets';
-buildAssets.description = 'Copy static assets like fonts, images, icons, favicon etc.';
+buildAssets.description = 'Copy static assets like fonts, images, icons, favicon, web.config etc.';
 
 gulp.task(buildAssets);

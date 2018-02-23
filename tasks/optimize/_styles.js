@@ -16,6 +16,6 @@ export function optimizeStyles() {
     .pipe(gulp.dest(`${config.paths.dist}/styles`));
 }
 optimizeStyles.displayName = 'optimize:styles';
-optimizeStyles.description = '';
+optimizeStyles.description = 'Perform styles minification and strip comments.';
 
 gulp.task(optimizeStyles);

@@ -14,6 +14,6 @@ export const watch = gulp.parallel(
   watchViews
 );
 watch.displayName = 'watch';
-watch.description = 'Rebuild application components on change.';
+watch.description = 'Rebuild all application components on change.';
 
 gulp.task(watch);
