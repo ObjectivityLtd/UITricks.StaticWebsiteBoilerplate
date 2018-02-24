@@ -23,22 +23,33 @@ export const flags = {
     default: config.server.openBrowser
   },
   'sync-browsers': {
-    alias: 's',
     description: 'Sync activities like clicks, scroll and form inputs across browsers.',
     type: 'boolean',
     default: config.server.syncBrowsers
   },
   'live-reload': {
-    alias: 'lr',
-    description: 'Live reload on file changes.',
+    description: 'Live reload browser on file change.',
     type: 'boolean',
     default: config.server.liveReload
   },
+  'target': {
+    description: 'Specify the build target (development or production with all optimizations enabled).',
+    type: 'string',
+    requiresArg: true,
+    choices: ['dev', 'prod'],
+    default: 'dev'
+  },
+  'env': {
+    description: 'Specify environment file to be used for build process.',
+    type: 'string',
+    requiresArg: true,
+    default: 'dev'
+  },
   'prod': {
-    description: '',
+    description: 'Apply all build optimizations and use production environment file (equivalent of gulp build --target=prod --env=prod).',
     type: 'boolean',
-    default: false
-  }
+    default: true
+  },
 };
 
 export const argv = yargs.options(flags).argv;

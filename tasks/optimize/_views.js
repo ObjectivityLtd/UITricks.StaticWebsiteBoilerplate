@@ -16,6 +16,6 @@ export function optimizeViews() {
     .pipe(gulp.dest(config.paths.dist));
 }
 optimizeViews.displayName = 'optimize:views';
-optimizeViews.description = 'Collapse whitespace and perform minification of inline JavaScript for compiled views.';
+optimizeViews.description = 'Collapse whitespace and perform minification of inline JavaScript in compiled views.';
 
 gulp.task(optimizeViews);

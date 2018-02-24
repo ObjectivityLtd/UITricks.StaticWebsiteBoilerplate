@@ -1,15 +1,7 @@
-import fs from 'fs';
 import gulp from 'gulp';
 import nunjucks from 'gulp-nunjucks-render';
-import path from 'path';
 import * as config from '@tasks/config';
-
-function getEnvironmentData() {
-  const filePath = path.join(__dirname, `../../${config.paths.src}/environments/env.json`);
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-
-  return data;
-}
+import { getEnvironmentData } from "@tasks/environment";
 
 /**
  * Task: build:views

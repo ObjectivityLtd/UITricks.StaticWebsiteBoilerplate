@@ -11,6 +11,6 @@ export function optimizeApp() {
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 optimizeApp.displayName = 'optimize:app';
-optimizeApp.description = 'Perform application scripts minification.';
+optimizeApp.description = 'Perform scripts minification.';
 
 gulp.task(optimizeApp);

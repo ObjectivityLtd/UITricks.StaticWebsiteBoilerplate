@@ -17,6 +17,8 @@ export const build = gulp.parallel(
 build.displayName = 'build';
 build.description = 'Build application scripts, copy assets, compile styles and views.';
 build.flags = {
+  '--target': flags['target'].description,
+  '--env': flags['env'].description,
   '--prod': flags['prod'].description
 };
 
