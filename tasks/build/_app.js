@@ -1,6 +1,8 @@
+import del from 'del';
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import concat from 'gulp-concat';
+import vinylPaths from 'vinyl-paths';
 import * as config from '@tasks/config';
 
 function buildVendorScripts() {
@@ -23,6 +25,7 @@ function mergeAllScripts() {
   ];
 
   return gulp.src(filesToMerge)
+    .pipe(vinylPaths(del))
     .pipe(concat('app.bundle.js'))
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
