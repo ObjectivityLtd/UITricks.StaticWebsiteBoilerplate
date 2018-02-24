@@ -9,6 +9,6 @@ export function reloadServer(done) {
   done();
 }
 reloadServer.displayName = 'serve:reload';
-reloadServer.description = '';
+reloadServer.description = 'Tell browser to reload the page.';
 
 gulp.task('serve:reload', reloadServer);

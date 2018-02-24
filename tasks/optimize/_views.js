@@ -8,6 +8,7 @@ import * as config from '@tasks/config';
 export function optimizeViews() {
   const options = {
     collapseWhitespace: true,
+    minifyCSS: true,
     minifyJS: true
   };
 
