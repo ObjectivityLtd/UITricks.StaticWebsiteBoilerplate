@@ -5,6 +5,7 @@ import { reloadServer } from '@tasks/serve/_reload';
 
 function rebuildOnChange() {
   const pathsToWatch = [
+    `${config.paths.src}/assets/**`,
     `${config.paths.src}/environments/**/*.json`,
     `${config.paths.src}/views/**/*.njk`
   ];

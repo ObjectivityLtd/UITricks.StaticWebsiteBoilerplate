@@ -10,7 +10,7 @@ export function buildViews() {
   const options = {
     data: getEnvironmentData(),
     path: [
-      `${config.paths.src}/assets/icons`,
+      `${config.paths.src}/assets`,
       `${config.paths.src}/views`
     ]
   };
