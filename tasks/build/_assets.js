@@ -29,14 +29,14 @@ function generateCustomCopyTasks() {
 }
 
 const copyToCustomPaths = generateCustomCopyTasks();
+const copyAllAssets = gulp.parallel(copyToBuild, copyToCustomPaths);
 
 /**
  * Task: build:assets
  */
-export const buildAssets = gulp.parallel(
+export const buildAssets = gulp.series(
   cleanAssets,
-  copyToBuild,
-  copyToCustomPaths
+  copyAllAssets
 );
 buildAssets.displayName = 'build:assets';
 buildAssets.description = 'Copy static assets like fonts, images, icons, favicon, web.config etc.';
