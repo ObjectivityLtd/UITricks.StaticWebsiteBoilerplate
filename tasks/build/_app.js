@@ -4,6 +4,7 @@ import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import vinylPaths from 'vinyl-paths';
 import * as config from '@tasks/config';
+import { cleanApp } from '@tasks/clean/_app';
 
 function buildVendorScripts() {
   return gulp.src(config.scripts.vendor)
@@ -36,6 +37,7 @@ const buildAllScripts = gulp.parallel(buildVendorScripts, buildLocalScripts);
  * Task: build:app
  */
 export const buildApp = gulp.series(
+  cleanApp,
   buildAllScripts,
   mergeAllScripts
 );

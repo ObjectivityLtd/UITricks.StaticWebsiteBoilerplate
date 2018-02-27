@@ -2,11 +2,9 @@ import gulp from 'gulp';
 import nunjucks from 'gulp-nunjucks-render';
 import * as config from '@tasks/config';
 import { getEnvironmentData } from '@tasks/environment';
+import { cleanViews } from '@tasks/clean/_views';
 
-/**
- * Task: build:views
- */
-export function buildViews() {
+function compileViews() {
   const options = {
     data: getEnvironmentData(),
     path: [
@@ -19,6 +17,14 @@ export function buildViews() {
     .pipe(nunjucks(options))
     .pipe(gulp.dest(config.paths.dist));
 }
+
+/**
+ * Task: build:views
+ */
+export const buildViews = gulp.series(
+  cleanViews,
+  compileViews
+);
 buildViews.displayName = 'build:views';
 buildViews.description = 'Compile nunjucks templates to HTML.';
 

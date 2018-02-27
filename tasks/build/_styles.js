@@ -2,11 +2,9 @@ import gulp from 'gulp';
 import sass from 'gulp-sass';
 import tildeImporter from 'node-sass-tilde-importer';
 import * as config from '@tasks/config';
+import { cleanStyles } from '@tasks/clean/_styles'
 
-/**
- * Task: build:styles
- */
-export function buildStyles() {
+function compileStyles() {
   const options = {
     importer: tildeImporter
   };
@@ -15,6 +13,14 @@ export function buildStyles() {
     .pipe(sass(options).on('error', sass.logError))
     .pipe(gulp.dest(`${config.paths.dist}/styles`));
 }
+
+/**
+ * Task: build:styles
+ */
+export const buildStyles = gulp.series(
+  cleanStyles,
+  compileStyles
+);
 buildStyles.displayName = 'build:styles';
 buildStyles.description = 'Compile Sass files to CSS.';
 

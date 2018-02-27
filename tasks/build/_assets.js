@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import * as config from '@tasks/config';
+import { cleanAssets } from '@tasks/clean/_assets';
 
 export function isCustomCopyPath(path) {
   return path instanceof Object;
@@ -33,6 +34,7 @@ const copyToCustomPaths = generateCustomCopyTasks();
  * Task: build:assets
  */
 export const buildAssets = gulp.parallel(
+  cleanAssets,
   copyToBuild,
   copyToCustomPaths
 );

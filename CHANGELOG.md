@@ -1,14 +1,15 @@
 v1.0.0
 -------------------
 - Rewrite tasks to Gulp 4 and ES6
-- Add Babel to transpile tasks and application scripts code
-- Add support for flags to override tasks configuration settings from CLI
+- Add Babel to transpile tasks and application code
+- Add support for flags to override tasks configuration from CLI
 - Add support for environment variables injected to views
-- Add possibility to copy assets from any source to custom destination paths
+- Add possibility to copy assets from any source to custom destination path
 - Add task to clean build output directory
+- Add subtasks to clean app, assets, styles and views from build output directory
 - Add tasks to optimize application scripts, compiled styles and views 
 - Add new settings to tasks configuration file
-- Add stylelint to project
+- Add stylelint with minimal recommended configuration
 - Change `gulp-connect` plugin to Browsersync
 - Change output directory from `build` to `dist`
 
