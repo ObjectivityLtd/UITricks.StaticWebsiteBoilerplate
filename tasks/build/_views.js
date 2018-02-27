@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import nunjucks from 'gulp-nunjucks-render';
 import * as config from '@tasks/config';
-import { getEnvironmentData } from "@tasks/environment";
+import { getEnvironmentData } from '@tasks/environment';
 
 /**
  * Task: build:views
