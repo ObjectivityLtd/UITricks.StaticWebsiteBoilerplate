@@ -1,0 +1,7 @@
+- Enhance `clean:asset` task - removing assets defined in config
+- Support `target=prod` in tasks
+- Disable source maps on "prod" build
+- Support `--prod` shortcut for `gulp build --target=prod --env=prod`
+- Remove jQuery and Bootstrap, prepare basic welcome page
+- Prepare documentation 
+- Bump version

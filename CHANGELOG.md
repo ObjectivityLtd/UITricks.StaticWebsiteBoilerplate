@@ -1,4 +1,4 @@
-v1.0.0
+v1.0.0-dev
 -------------------
 - Rewrite tasks to Gulp 4 and ES6
 - Add Babel to transpile tasks and application code
@@ -10,6 +10,7 @@ v1.0.0
 - Add tasks to optimize application scripts, compiled styles and views 
 - Add new settings to tasks configuration file
 - Add stylelint with minimal recommended configuration
+- Add source maps for Sass
 - Change `gulp-connect` plugin to Browsersync
 - Change output directory from `build` to `dist`
 
