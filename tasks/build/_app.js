@@ -4,7 +4,9 @@ import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import vinylPaths from 'vinyl-paths';
 import * as config from '@tasks/config';
+import { targetDevelopment } from '@tasks/target';
 import { cleanApp } from '@tasks/clean/_app';
+import { optimizeApp } from '@tasks/optimize/_app';
 
 function buildVendorScripts() {
   return gulp.src(config.scripts.vendor)
@@ -31,6 +33,14 @@ function mergeAllScripts() {
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 
+function target(done) {
+  if (targetDevelopment()) {
+    return done();
+  }
+
+  return optimizeApp();
+}
+
 const buildAllScripts = gulp.parallel(buildVendorScripts, buildLocalScripts);
 
 /**
@@ -39,7 +49,8 @@ const buildAllScripts = gulp.parallel(buildVendorScripts, buildLocalScripts);
 export const buildApp = gulp.series(
   cleanApp,
   buildAllScripts,
-  mergeAllScripts
+  mergeAllScripts,
+  target
 );
 buildApp.displayName = 'build:app';
 buildApp.description = 'Build application scripts.';

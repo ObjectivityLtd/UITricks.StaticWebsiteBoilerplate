@@ -1,6 +1,7 @@
 import yargs from 'yargs';
 import * as config from '@tasks/config';
-import { environments, targets } from '@tasks/constants';
+import { environments } from '@tasks/environment';
+import { targets } from '@tasks/target';
 
 const group = {
   server: 'Server:',

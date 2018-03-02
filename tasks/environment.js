@@ -3,6 +3,8 @@ import path from 'path';
 import * as config from '@tasks/config';
 import { argv } from '@tasks/flags';
 
+export const environments = Object.keys(config.environments);
+
 export function getEnvironmentFilename() {
   return config.environments[argv['env']];
 }
