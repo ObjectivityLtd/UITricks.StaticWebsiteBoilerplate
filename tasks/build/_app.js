@@ -33,7 +33,7 @@ function mergeAllScripts() {
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 
-function target(done) {
+function targetBuild(done) {
   if (targetDevelopment()) {
     return done();
   }
@@ -50,7 +50,7 @@ export const buildApp = gulp.series(
   cleanApp,
   buildAllScripts,
   mergeAllScripts,
-  target
+  targetBuild
 );
 buildApp.displayName = 'build:app';
 buildApp.description = 'Build application scripts.';

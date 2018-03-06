@@ -20,7 +20,7 @@ function compileViews() {
     .pipe(gulp.dest(config.paths.dist));
 }
 
-function target(done) {
+function targetBuild(done) {
   if (targetDevelopment()) {
     return done();
   }
@@ -34,7 +34,7 @@ function target(done) {
 export const buildViews = gulp.series(
   cleanViews,
   compileViews,
-  target
+  targetBuild
 );
 buildViews.displayName = 'build:views';
 buildViews.description = 'Compile nunjucks templates to HTML.';

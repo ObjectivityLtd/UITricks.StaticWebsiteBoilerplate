@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import gulpif from 'gulp-if';
 import sass from 'gulp-sass';
 import sourcemaps from 'gulp-sourcemaps';
 import tildeImporter from 'node-sass-tilde-importer';
@@ -13,13 +14,13 @@ function compileStyles() {
   };
 
   return gulp.src(`${config.paths.src}/styles/**/*.+(sass|scss)`)
-    .pipe(sourcemaps.init())
+    .pipe(gulpif(targetDevelopment, sourcemaps.init()))
     .pipe(sass(options).on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(`${config.paths.dist}/styles`));
 }
 
-function target(done) {
+function targetBuild(done) {
   if (targetDevelopment()) {
     return done();
   }
@@ -33,7 +34,7 @@ function target(done) {
 export const buildStyles = gulp.series(
   cleanStyles,
   compileStyles,
-  target
+  targetBuild
 );
 buildStyles.displayName = 'build:styles';
 buildStyles.description = 'Compile Sass files to CSS.';
