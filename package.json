@@ -22,7 +22,7 @@
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0-beta.1",
-    "gulp-clean-css": "^3.9.2",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^4.0.0",
     "gulp-if": "^2.0.2",
@@ -35,7 +35,7 @@
     "require-dir": "^1.0.0",
     "stylelint": "^9.1.1",
     "stylelint-config-recommended": "^2.1.0",
-    "stylelint-scss": "^2.4.0",
+    "stylelint-scss": "^2.5.0",
     "vinyl-paths": "^2.1.0",
     "yargs": "^11.0.0"
   }
