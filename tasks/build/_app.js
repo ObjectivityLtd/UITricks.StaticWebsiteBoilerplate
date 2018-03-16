@@ -4,37 +4,43 @@ import babel from 'gulp-babel';
 import concat from 'gulp-concat';
 import vinylPaths from 'vinyl-paths';
 import * as config from '@tasks/config';
-import { targetDevelopment } from '@tasks/target';
+import { targetProduction } from '@tasks/target';
 import { cleanApp } from '@tasks/clean/_app';
 import { optimizeApp } from '@tasks/optimize/_app';
 
+const app = {
+  vendor: 'app.vendor.js',
+  local: 'app.local.js',
+  bundle: 'app.bundle.js'
+};
+
 function buildVendorScripts() {
   return gulp.src(config.scripts.vendor)
-    .pipe(concat('app.vendor.js'))
+    .pipe(concat(app.vendor))
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 
 function buildLocalScripts() {
   return gulp.src(config.scripts.local)
-    .pipe(concat('app.local.js'))
+    .pipe(concat(app.local))
     .pipe(babel())
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 
 function mergeAllScripts() {
   const filesToMerge = [
-    `${config.paths.dist}/app/app.vendor.js`,
-    `${config.paths.dist}/app/app.local.js`
+    `${config.paths.dist}/app/${app.vendor}`,
+    `${config.paths.dist}/app/${app.local}`
   ];
 
   return gulp.src(filesToMerge)
     .pipe(vinylPaths(del))
-    .pipe(concat('app.bundle.js'))
+    .pipe(concat(app.bundle))
     .pipe(gulp.dest(`${config.paths.dist}/app`));
 }
 
 function targetBuild(done) {
-  if (targetDevelopment()) {
+  if (!targetProduction()) {
     return done();
   }
 

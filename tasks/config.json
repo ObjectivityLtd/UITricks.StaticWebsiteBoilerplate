@@ -12,9 +12,6 @@
     "prod": "env.prod.json"
   },
 
-  "defaultEnvironment": "dev",
-  "defaultTarget": "dev",
-
   "paths": {
     "dist": "dist",
     "src": "src"

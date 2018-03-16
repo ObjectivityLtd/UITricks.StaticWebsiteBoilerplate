@@ -6,6 +6,7 @@ export const target = {
 };
 
 export const targets = Object.values(target);
+export const defaultTarget = target.dev;
 
 export function targetDevelopment() {
   return argv['target'] === target.dev;

@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import nunjucks from 'gulp-nunjucks-render';
 import * as config from '@tasks/config';
 import { getEnvironmentData } from '@tasks/environment';
-import { targetDevelopment } from '@tasks/target';
+import { targetProduction } from '@tasks/target';
 import { cleanViews } from '@tasks/clean/_views';
 import { optimizeViews } from '@tasks/optimize/_views';
 
@@ -21,7 +21,7 @@ function compileViews() {
 }
 
 function targetBuild(done) {
-  if (targetDevelopment()) {
+  if (!targetProduction()) {
     return done();
   }
 

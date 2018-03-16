@@ -1,7 +1,7 @@
 import yargs from 'yargs';
 import * as config from '@tasks/config';
-import { environments } from '@tasks/environment';
-import { targets } from '@tasks/target';
+import { defaultEnvironment, environments } from '@tasks/environment';
+import { defaultTarget, targets } from '@tasks/target';
 
 const group = {
   server: 'Server:',
@@ -50,7 +50,7 @@ export const flags = {
     group: group.build,
     requiresArg: true,
     choices: targets,
-    default: config.defaultTarget
+    default: defaultTarget
   },
   'env': {
     description: 'Specify environment file to be used for build process.',
@@ -58,7 +58,7 @@ export const flags = {
     group: group.build,
     requiresArg: true,
     choices: environments,
-    default: config.defaultEnvironment
+    default: defaultEnvironment
   },
   'prod': {
     description: 'Apply all build optimizations and use production environment file (equivalent of gulp build --target=prod --env=prod).',
