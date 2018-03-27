@@ -14,7 +14,11 @@ const app = {
   bundle: 'app.bundle.js'
 };
 
-function buildVendorScripts() {
+function buildVendorScripts(done) {
+  if (config.scripts.vendor.length === 0) {
+    return done();
+  }
+
   return gulp.src(config.scripts.vendor)
     .pipe(concat(app.vendor))
     .pipe(gulp.dest(`${config.paths.dist}/app`));
@@ -33,7 +37,7 @@ function mergeAllScripts() {
     `${config.paths.dist}/app/${app.local}`
   ];
 
-  return gulp.src(filesToMerge)
+  return gulp.src(filesToMerge, { allowEmpty: true })
     .pipe(vinylPaths(del))
     .pipe(concat(app.bundle))
     .pipe(gulp.dest(`${config.paths.dist}/app`));
