@@ -1,7 +1,7 @@
 {
   "name": "website-boilerplate",
   "version": "1.0.0-dev",
-  "description": "",
+  "description": "Creating static websites made easy. Boilerplate with template engine, styles and scripts compilation, environments support and much more. Fast set-up with local web server.",
   "main": "gulpfile.babel.js",
   "scripts": {
     "lint:styles": "stylelint \"src/styles/**/*.+(sass|scss)\""

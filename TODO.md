@@ -1,4 +1,0 @@
-- Enhance `clean:asset` task - removing assets defined in config
-- Support `--prod` shortcut for `gulp build --target=prod --env=prod`
-- Prepare documentation 
-- Bump version
