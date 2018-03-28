@@ -13,6 +13,7 @@ v1.0.0-dev
 - Add source maps for Sass
 - Change `gulp-connect` plugin to Browsersync
 - Change output directory from `build` to `dist`
+- Remove default Bootstrap and jQuery dependency - leave it up to user
 
 
 v0.1.1 (2017-08-10)
