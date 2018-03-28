@@ -1,33 +1,24 @@
-# UITricks.StaticWebsiteBoilerplate
+# Website Boilerplate
+*Creating static websites made easy.* Website Boilerplate is a small starting package
+that aims to simplify project set-up and development. Inspired by Angular CLI.
 
-## About
-Static Website Boilerplate is a small project start package. It aims to simplify set-up
-and development by delivering complete project structure and automation for common tasks.
-
-Static Website Boilerplate includes:
-* [Nunjucks](https://mozilla.github.io/nunjucks/) – a rich and powerful templating language developed by Mozilla.
-* [gulp](http://gulpjs.com) – tasks runner for automation process.
-* [gulp-connect](https://www.npmjs.com/package/gulp-connect) – lightweight web server with support for live reload (sponsored by JetBrains).
-* [Sass](http://sass-lang.com) – the most popular CSS preprocessor.
-* [Bootstrap Sass](https://github.com/twbs/bootstrap-sass) – Bootstrap UI framework in Sass version to benefit from variables and mixins.
-* [jQuery](https://jquery.com) – JavaScript library for easy DOM manipulation.
+Integrated plugins:
+[Gulp 4](https://gulpjs.com),
+[Nunjucks](https://mozilla.github.io/nunjucks/),
+[Babel](https://babeljs.io),
+[Sass](https://sass-lang.com),
+[Browsersync](https://browsersync.io),
+[stylelint](https://stylelint.io)
 
 
 ## How to run the project
-1. Start with installing gulp-cli (you can skip this if you already have it):  
-`npm install --global gulp-cli`
-
-2. Install project dependencies:  
-`npm install`
-
-3. Build website and run development server using task:  
-`gulp serve`
-
-4. Open website in a browser by navigating to: http://localhost:8080
-(default port can be changed in `tasks/config.js`).
+1. Clone this repository.
+2. Install gulp-cli: `npm install --global gulp-cli`
+3. Install project dependencies `npm install`
+4. Run web server and build project: `gulp serve -o`
 
 
-## Gulp tasks
+## Tasks
 You can always run `gulp --tasks` command from CLI to get the full tasks list.
 Tu run the task, type `gulp` followed by task name e.g. `gulp build` or `gulp watch:styles`.
 Default gulp tasks is `serve`.
@@ -43,10 +34,3 @@ Default gulp tasks is `serve`.
   * `watch:styles` – Recompile Sass files on changes.
   * `watch:views` – Recompile templates on changes.
 * `serve` – Run application server for development.
-
-
-## Future plans
-* Move all path definitions from gulp tasks to config.js
-* Improved documentation
-* Tasks to prepare minified and optimized bundle
-* Easy integration with Vue.js
