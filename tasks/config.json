@@ -1,0 +1,34 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 8080,
+    "openBrowser": false,
+    "syncBrowsers": false,
+    "liveReload": true
+  },
+
+  "environments": {
+    "dev": "env.json",
+    "prod": "env.prod.json"
+  },
+
+  "paths": {
+    "dist": "dist",
+    "src": "src"
+  },
+
+  "assets": [
+    { "src": "src/assets/**/*", "base": "src" },
+    "src/.htaccess",
+    "src/favicon.ico",
+    "src/robots.txt",
+    "src/web.config"
+  ],
+
+  "scripts": {
+    "vendor": [],
+    "local": [
+      "src/app/**/*.js"
+    ]
+  }
+}

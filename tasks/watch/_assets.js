@@ -1,8 +1,24 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import * as config from '@tasks/config';
+import { buildAssets, isCustomCopyPath } from '@tasks/build/_assets';
+import { reloadServer } from '@tasks/serve/_reload';
 
-function watchAssets() {
-  gulp.watch('src/assets', ['build:assets']);
+function rebuildOnChange() {
+  const pathsToWatch = config.assets.map(asset => {
+    return isCustomCopyPath(asset) ? asset.src : asset;
+  });
+
+  gulp.watch(pathsToWatch, gulp.series(buildAssets, reloadServer));
 }
-watchAssets.description = 'Watch static assets changes.';
 
-gulp.task('watch:assets', ['build:assets'], watchAssets);
+/**
+ * Task: watch:assets
+ */
+export const watchAssets = gulp.series(
+  buildAssets,
+  rebuildOnChange
+);
+watchAssets.displayName = 'watch:assets';
+watchAssets.description = 'Update static assets on change.';
+
+gulp.task(watchAssets);

@@ -1,26 +1,39 @@
 {
-  "name": "static-website-boilerplate",
-  "version": "0.1.1",
-  "description": "Static website project skeleton, including template engine (nunjucks), Sass and Gulp.",
-  "main": "gulpfile.js",
+  "name": "website-boilerplate",
+  "version": "1.0.0-dev",
+  "description": "Creating static websites made easy. Boilerplate with template engine, styles and scripts compilation, environments support and much more. Fast set-up with local web server.",
+  "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:styles": "stylelint \"src/styles/**/*.+(sass|scss)\""
   },
   "author": "Jarosław Pustuła <jpustula@objectivity.co.uk>",
   "license": "MIT",
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7",
-    "jquery": "^3.3.1"
-  },
+  "repository": "github:ObjectivityLtd/website-boilerplate",
+  "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/register": "^7.0.0-beta.42",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-clean-css": "^3.9.3",
     "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.2.0",
-    "gulp-load-plugins": "^1.5.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-merge": "^0.1.1",
     "gulp-nunjucks-render": "^2.2.2",
-    "gulp-sass": "^3.1.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
-    "require-dir": "^0.3.2"
+    "node-sass-tilde-importer": "^1.0.0",
+    "require-dir": "^1.0.0",
+    "stylelint": "^9.1.3",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-scss": "^2.5.0",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^11.0.0"
   }
 }

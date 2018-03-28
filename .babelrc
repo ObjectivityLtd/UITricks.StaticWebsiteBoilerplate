@@ -1,0 +1,13 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "@src": "./src",
+        "@app": "./src/app",
+        "@env": "./src/environments",
+        "@tasks": "./tasks"
+      }
+    }]
+  ]
+}

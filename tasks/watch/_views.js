@@ -1,8 +1,26 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import * as config from '@tasks/config';
+import { buildViews } from '@tasks/build/_views';
+import { reloadServer } from '@tasks/serve/_reload';
 
-function watchViews() {
-  gulp.watch('src/views/**/*.njk', ['build:views']);
+function rebuildOnChange() {
+  const pathsToWatch = [
+    `${config.paths.src}/assets/**`,
+    `${config.paths.src}/environments/**/*.json`,
+    `${config.paths.src}/views/**/*.njk`
+  ];
+
+  gulp.watch(pathsToWatch, gulp.series(buildViews, reloadServer));
 }
-watchViews.description = 'Recompile templates on changes.';
 
-gulp.task('watch:views', ['build:views'], watchViews);
+/**
+ * Task: watch:views
+ */
+export const watchViews = gulp.series(
+  buildViews,
+  rebuildOnChange
+);
+watchViews.displayName = 'watch:views';
+watchViews.description = 'Recompile nunjucks templates on change.';
+
+gulp.task(watchViews);

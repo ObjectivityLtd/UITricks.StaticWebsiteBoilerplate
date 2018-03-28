@@ -1,18 +1,42 @@
-const config = require('../config.js');
-const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
+import gulp from 'gulp';
+import nunjucks from 'gulp-nunjucks-render';
+import * as config from '@tasks/config';
+import { getEnvironmentData } from '@tasks/environment';
+import { targetProduction } from '@tasks/target';
+import { cleanViews } from '@tasks/clean/_views';
+import { optimizeViews } from '@tasks/optimize/_views';
 
-function buildViews() {
-  return gulp.src('src/views/pages/**/*.njk')
-    .pipe(plugins.nunjucksRender({
-      path: [
-        'src/views',
-        'src/assets/icons'
-      ]
-    }))
-    .pipe(gulp.dest('build'))
-    .pipe(plugins.connect.reload());
+function compileViews() {
+  const options = {
+    data: getEnvironmentData(),
+    path: [
+      `${config.paths.src}/assets`,
+      `${config.paths.src}/views`
+    ]
+  };
+
+  return gulp.src(`${config.paths.src}/views/pages/**/*.njk`)
+    .pipe(nunjucks(options))
+    .pipe(gulp.dest(config.paths.dist));
 }
-buildViews.description = 'Compile templates to plain HTML.';
 
-gulp.task('build:views', buildViews);
+function targetBuild(done) {
+  if (!targetProduction()) {
+    return done();
+  }
+
+  return optimizeViews();
+}
+
+/**
+ * Task: build:views
+ */
+export const buildViews = gulp.series(
+  cleanViews,
+  compileViews,
+  targetBuild
+);
+buildViews.displayName = 'build:views';
+buildViews.description = 'Compile nunjucks templates to HTML.';
+
+gulp.task(buildViews);

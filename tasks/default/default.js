@@ -1,3 +1,4 @@
-const gulp = require('gulp');
+import gulp from 'gulp';
+import { serve } from '@tasks/serve/serve';
 
-gulp.task('default', ['serve']);
+gulp.task('default', serve);

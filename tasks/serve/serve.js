@@ -1,18 +1,38 @@
-const config = require('../config.js');
-const gulp = require('gulp');
-const plugins = require('gulp-load-plugins')();
+import gulp from 'gulp';
+import * as config from '@tasks/config';
+import { argv, flags } from '@tasks/flags';
+import { server } from '@tasks/server';
+import { watch } from '@tasks/watch/watch';
 
-function serve() {
-  plugins.connect.server({
-    root: config.serve.path,
-    port: config.serve.port,
-    livereload: config.serve.livereload
+function runServer(done) {
+  server.init({
+    server: config.paths.dist,
+    host: argv['host'],
+    port: argv['port'],
+    open: argv['open'],
+    ghostMode: argv['sync-browsers'],
+    codeSync: argv['live-reload'],
+    notify: false
   });
+
+  done();
 }
+
+/**
+ * Task: serve
+ */
+export const serve = gulp.parallel(
+  runServer,
+  watch
+);
+serve.displayName = 'serve';
 serve.description = 'Run application server for development.';
 serve.flags = {
-  '--port': 'Port used to run the application server (overrides config.js value).',
-  '--livereload': 'Enable/disable live reload on file changes (overrides config.js value).',
+  '--host': flags['host'].description,
+  '--port': flags['port'].description,
+  '--open': flags['open'].description,
+  '--sync-browsers': flags['sync-browsers'].description,
+  '--live-reload': flags['live-reload'].description
 };
 
-gulp.task('serve', ['watch'], serve);
+gulp.task(serve);
