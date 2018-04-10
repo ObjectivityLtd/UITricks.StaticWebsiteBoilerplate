@@ -11,8 +11,8 @@ gulp build --target=prod --env=prod
 ```
 
 ## Available flags
-To get list of available flags, run `gulp help` command.
-To show full tasks tree with flags, run `gulp --tasks --depth=1`.
+To get list of available flags run `gulp help` command.
+To show full tasks tree with flags run `gulp --tasks --depth=1`.
 
 Flag | Alias | Default value | Description
 :----|:------|:--------------|:-----------
