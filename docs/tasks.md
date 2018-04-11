@@ -7,6 +7,9 @@ gulp build
 gulp build:styles
 ```
 
+## Configuration file
+
+
 ## Available tasks
 * `build` – Build application scripts, copy assets, compile styles and views.
   * `build:app` – Build application scripts.
