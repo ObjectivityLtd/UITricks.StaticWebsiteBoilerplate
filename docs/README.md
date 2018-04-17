@@ -3,12 +3,13 @@
   * [Tasks and configuration file](tasks.md)
   * [Flags](flags.md)
 * **Content**
-  * [Creating new pages, components and macros]()
-  * [Copying static assets]()
   * [Environment files]()
+  * [Copying static assets]()
+  * [Compiling scripts]()
+  * [Creating new pages, components and macros]()
   * [Preparing deployment package]()
 * **Tools**
-  * [Using styles linter]()
+  * [Using linters]()
 * **Guides**
   * [How to install Bootstrap and jQuery?]()
   * [How to integrate Vue.js, install plugins and create components?]()

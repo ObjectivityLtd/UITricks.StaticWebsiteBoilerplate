@@ -18,16 +18,17 @@ Integrated plugins:
 
 ## Documentation
 * **Getting started**
-  * [Introduction](https://github.com/ObjectivityLtd/website-boilerplate/blob/master/docs/introduction.md)
-  * [Tasks and configuration file](https://github.com/ObjectivityLtd/website-boilerplate/blob/master/docs/tasks.md)
-  * [Flags](https://github.com/ObjectivityLtd/website-boilerplate/blob/master/docs/flags.md)
+  * [Introduction](blob/master/docs/introduction.md)
+  * [Tasks and configuration file](blob/master/docs/tasks.md)
+  * [Flags](blob/master/docs/flags.md)
 * **Content**
-  * [Creating new pages, components and macros]()
-  * [Copying static assets]()
   * [Environment files]()
+  * [Copying static assets]()
+  * [Compiling scripts]()
+  * [Creating new pages, components and macros]()
   * [Preparing deployment package]()
 * **Tools**
-  * [Using styles linter]()
+  * [Using linters]()
 * **Guides**
   * [How to install Bootstrap and jQuery?]()
   * [How to integrate Vue.js, install plugins and create components?]()

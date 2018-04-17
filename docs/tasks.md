@@ -4,9 +4,10 @@ copying assets, creating and optimizing builds or watching file changes.
 Website Boilerplate provides a set of tasks useful in daily development.
 You can run it from CLI like any other command.
 
-All tasks included in Website Boilerplate are written in JavaScript
-(ES6 syntax transpiled by Babel) and run by [gulp](https://gulpjs.com).
-Source code is located in `tasks/` directory.
+All tasks included in Website Boilerplate are run by [gulp](https://gulpjs.com).
+Tasks code is written in JavaScript (ES6 syntax transpiled by Babel).
+Source code is located in `tasks/` directory. Tasks are automatically registered by
+[require-dir](https://www.npmjs.com/package/require-dir) plugin. 
 
 ## Example usage
 ```sh
@@ -16,7 +17,10 @@ gulp build --target=prod --env=prod
 ```
 
 ## Configuration file
-`tasks/config.json`
+Tasks configuration is located in `tasks/config.json`. In this file you can
+configure default local web server settings (like port, hostname, live reload),
+define environment files (by default `dev` and `prod`) or provide a list of
+assets and scripts.
 
 ## Available tasks
 * `build` – Build application scripts, copy assets, compile styles and views.
