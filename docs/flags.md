@@ -7,7 +7,7 @@ specific (see below table for details).
 ```sh
 gulp serve -o
 gulp serve --live-reload=false --port=4200
-gulp build --target=prod --env=prod 
+gulp build --target=prod --env=prod
 ```
 
 ## Available flags

@@ -1,14 +1,22 @@
 # Tasks
+Tasks can be used to automate various actions like running local web server,
+copying assets, creating and optimizing builds or watching file changes.
+Website Boilerplate provides a set of tasks useful in daily development.
+You can run it from CLI like any other command.
+
+All tasks included in Website Boilerplate are written in JavaScript
+(ES6 syntax transpiled by Babel) and run by [gulp](https://gulpjs.com).
+Source code is located in `tasks/` directory.
 
 ## Example usage
 ```sh
 gulp serve
-gulp build
 gulp build:styles
+gulp build --target=prod --env=prod
 ```
 
 ## Configuration file
-
+`tasks/config.json`
 
 ## Available tasks
 * `build` – Build application scripts, copy assets, compile styles and views.
@@ -21,7 +29,7 @@ gulp build:styles
   * `clean:assets` – Clean copied assets from build output directory.
   * `clean:styles` – Clean compiled styles from build output directory.
   * `clean:views` – Clean compiled views from build output directory.
-* `optimize` – Optimize application scripts, styles and views.
+* `optimize` – Optimize application scripts, styles and views from build output directory.
   * `optimize:app` – Perform scripts minification.
   * `optimize:styles` – Perform styles minification and strip comments.
   * `optimize:views` – Collapse whitespace and perform minification of inline JavaScript in compiled views.

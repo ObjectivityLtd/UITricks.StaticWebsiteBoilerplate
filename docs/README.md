@@ -7,7 +7,7 @@
   * [Copying static assets]()
   * [Environment files]()
   * [Preparing deployment package]()
-* **Utilities**
+* **Tools**
   * [Using styles linter]()
 * **Guides**
   * [How to install Bootstrap and jQuery?]()
