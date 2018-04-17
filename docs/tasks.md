@@ -2,11 +2,12 @@
 Tasks can be used to automate various actions like running local web server,
 copying assets, creating and optimizing builds or watching file changes.
 Website Boilerplate provides a set of tasks useful in daily development.
-You can run it from CLI like any other command.
+You can run it from CLI like any other command. Some tasks have support for
+[flags]([flags.md) which may be used to override default configuration values. 
 
 All tasks included in Website Boilerplate are run by [gulp](https://gulpjs.com).
-Tasks code is written in JavaScript (ES6 syntax transpiled by Babel).
-Source code is located in `tasks/` directory. Tasks are automatically registered by
+Tasks are written in JavaScript (ES6 syntax transpiled by Babel). Source code
+is located in `tasks/` directory. Tasks are automatically registered by
 [require-dir](https://www.npmjs.com/package/require-dir) plugin. 
 
 ## Example usage
@@ -17,10 +18,13 @@ gulp build --target=prod --env=prod
 ```
 
 ## Configuration file
-Tasks configuration is located in `tasks/config.json`. In this file you can
-configure default local web server settings (like port, hostname, live reload),
-define environment files (by default `dev` and `prod`) or provide a list of
-assets and scripts.
+Tasks configuration is stored in JSON file located in `tasks/config.json`.
+In this file you can configure default local web server settings (like port,
+hostname, live reload), define environment files (default `dev` and `prod`)
+or provide a list of assets and scripts. More about configuration:
+* [Using environment files](environment-files.md)
+* [Copying static assets](copying-static-assets.md)
+* [Compiling scripts](compiling-scripts.md)
 
 ## Available tasks
 * `build` – Build application scripts, copy assets, compile styles and views.
@@ -37,7 +41,7 @@ assets and scripts.
   * `optimize:app` – Perform scripts minification.
   * `optimize:styles` – Perform styles minification and strip comments.
   * `optimize:views` – Collapse whitespace and perform minification of inline JavaScript in compiled views.
-* `serve` – Run application server for development.
+* `serve` – Run application server for development. This is the default task.
 * `watch` – Rebuild all application components on change.
   * `watch:app` – Rebuild application scripts on change.
   * `watch:assets` – Update static assets on change.
