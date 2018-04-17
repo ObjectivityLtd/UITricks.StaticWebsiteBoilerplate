@@ -3,7 +3,7 @@ Tasks can be used to automate various actions like running local web server,
 copying assets, creating and optimizing builds or watching file changes.
 Website Boilerplate provides a set of tasks useful in daily development.
 You can run it from CLI like any other command. Some tasks have support for
-[flags]([flags.md) which may be used to override default configuration values. 
+[flags](flags.md) which may be used to override default configuration values. 
 
 All tasks included in Website Boilerplate are run by [gulp](https://gulpjs.com).
 Tasks are written in JavaScript (ES6 syntax transpiled by Babel). Source code
@@ -21,7 +21,7 @@ gulp build --target=prod --env=prod
 Tasks configuration is stored in JSON file located in `tasks/config.json`.
 In this file you can configure default local web server settings (like port,
 hostname, live reload), define environment files (default `dev` and `prod`)
-or provide a list of assets and scripts. More about configuration:
+or provide a list of assets and scripts. Read more about configuration:
 * [Using environment files](environment-files.md)
 * [Copying static assets](copying-static-assets.md)
 * [Compiling scripts](compiling-scripts.md)
