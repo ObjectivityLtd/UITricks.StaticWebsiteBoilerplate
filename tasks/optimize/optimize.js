@@ -12,6 +12,6 @@ export const optimize = gulp.parallel(
   optimizeViews
 );
 optimize.displayName = 'optimize';
-optimize.description = 'Optimize application scripts, styles and views.';
+optimize.description = 'Optimize application scripts, styles and views from build output directory.';
 
 gulp.task(optimize);

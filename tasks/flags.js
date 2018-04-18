@@ -45,7 +45,7 @@ export const flags = {
     default: config.server.liveReload
   },
   'target': {
-    description: 'Specify the build target (development or production with all optimizations enabled).',
+    description: 'Specify the build target (development or production with all optimizations).',
     type: 'string',
     group: group.build,
     requiresArg: true,
