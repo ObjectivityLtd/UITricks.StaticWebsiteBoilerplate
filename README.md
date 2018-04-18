@@ -25,17 +25,17 @@ Included tools:
 
 ## Documentation
 * **Getting started**
-  * [Introduction](docs/introduction.md)
-  * [Tasks and configuration file](docs/tasks.md)
-  * [Flags](docs/flags.md)
+  * [Introduction](docs/getting-started/introduction.md)
+  * [Tasks and configuration file](docs/getting-started/tasks.md)
+  * [Flags](docs/getting-started/flags.md)
 * **Content**
-  * [Environment files](docs/environment-files.md)
-  * [Copying static assets](docs/copying-static-assets.md)
-  * [Compiling scripts](docs/compiling-scripts.md)
-  * [Creating new pages, components and macros](docs/creating-new-pages,-components-and-macros.md)
-  * [Preparing deployment package](docs/preparing-deployment-package.md)
+  * [Environment files](docs/content/environment-files.md)
+  * [Copying static assets](docs/content/copying-static-assets.md)
+  * [Compiling scripts](docs/content/compiling-scripts.md)
+  * [Creating new pages, components and macros](docs/content/creating-new-pages-components-and-macros.md)
+  * [Preparing deployment package](docs/content/preparing-deployment-package.md)
 * **Tools**
-  * [Using linters](docs/using-linters.md)
+  * [Using linters](docs/tools/using-linters.md)
 * **Guides**
-  * [How to install Bootstrap and jQuery?]()
-  * [How to integrate Vue.js, install plugins and create components?]()
+  * [How to install Bootstrap and jQuery?](docs/guides/how-to-install-bootstrap-and-jquery.md)
+  * [How to integrate Vue.js, install plugins and create components?](how-to-integrate-vuejs-install-plugins-and-create-components.md)

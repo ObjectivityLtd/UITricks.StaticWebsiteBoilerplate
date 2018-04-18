@@ -1,5 +1,4 @@
-v1.0.0-dev
--------------------
+## v1.0.0
 - Rewrite tasks to Gulp 4 and ES6
 - Add Babel to transpile tasks and application code
 - Add support for flags to override tasks configuration from CLI
@@ -15,13 +14,9 @@ v1.0.0-dev
 - Change output directory from `build` to `dist`
 - Remove default Bootstrap and jQuery dependency - leave it up to user
 
-
-v0.1.1 (2017-08-10)
--------------------
+## v0.1.1 (2017-08-10)
 - Fix duplicated Sass variables import
 - Rename ambiguous `scaffolding.scss` to `core.scss`
 
-
-v0.1.0 (2017-07-06)
--------------------
+## v0.1.0 (2017-07-06)
 - Initial release

@@ -22,9 +22,9 @@ Tasks configuration is stored in JSON file located in `tasks/config.json`.
 In this file you can configure default local web server settings (like port,
 hostname, live reload), define environment files (default `dev` and `prod`)
 or provide a list of assets and scripts. Read more about configuration:
-* [Using environment files](environment-files.md)
-* [Copying static assets](copying-static-assets.md)
-* [Compiling scripts](compiling-scripts.md)
+* [Using environment files](../content/environment-files.md)
+* [Copying static assets](../content/copying-static-assets.md)
+* [Compiling scripts](../content/compiling-scripts.md)
 
 ## Available tasks
 * `build` – Build application scripts, copy assets, compile styles and views.
